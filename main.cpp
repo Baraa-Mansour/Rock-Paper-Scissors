@@ -19,17 +19,17 @@ enum enRockPaperScissors
 // Structs
 struct stGameInfo
 {
-    int RoundsNumber = 0;
+    short RoundsNumber = 0;
 
-    int PlayerWinRoundCounter = 0;
-    int ComWinRoundCounter = 0;
-    int DrawRoundCounter = 0;
+    short PlayerWinRoundCounter = 0;
+    short ComWinRoundCounter = 0;
+    short DrawRoundCounter = 0;
 
     enWinner Winner = DRAW;
 };
 struct stRoundInfo
 {
-    int RoundNumber = 0;
+    short RoundNumber = 0;
 
     enRockPaperScissors PlayerChoice = ROCK;
     enRockPaperScissors ComputerChoice = ROCK;
@@ -96,7 +96,7 @@ string GetWinnerString(enWinner Winner)
 // Get Choices
 enRockPaperScissors ReadPlayerChoice()
 {
-    int playerChoice = ReadPositiveNumberInRange("[1]ROCK [2]PAPER [3]SCISSORS :", 1, 3);
+    short playerChoice = ReadPositiveNumberInRange("[1]ROCK [2]PAPER [3]SCISSORS :", 1, 3);
 
     return (enRockPaperScissors)playerChoice;
 }
@@ -201,9 +201,9 @@ void PlayGame()
 {
     stGameInfo game;
 
-    game.RoundsNumber = ReadPositiveNumberInRange("How Many Rounds? [ From (1) to (10) ]", 1, 10);
+    game.RoundsNumber = (short)ReadPositiveNumberInRange("How Many Rounds? [ From (1) to (10) ]", 1, 10);
 
-    for (int i = 1; i <= game.RoundsNumber; i++)
+    for (short i = 1; i <= game.RoundsNumber; i++)
     {
         stRoundInfo round;
         round.RoundNumber = i;
