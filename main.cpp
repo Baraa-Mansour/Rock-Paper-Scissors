@@ -93,6 +93,7 @@ string GetWinnerString(enWinner Winner)
     }
 }
 
+// Get Choices
 enRockPaperScissors ReadPlayerChoice()
 {
     int playerChoice = ReadPositiveNumberInRange("[1]ROCK [2]PAPER [3]SCISSORS :", 1, 3);
@@ -102,21 +103,6 @@ enRockPaperScissors ReadPlayerChoice()
 enRockPaperScissors GenerateRandomChoice()
 {
     return (enRockPaperScissors)GenerateRandomNumberInRange(1, 3);
-}
-
-enWinner CheckRoundWinner(stRoundInfo Round)
-{
-    if (Round.PlayerChoice == Round.ComputerChoice)
-        return DRAW;
-
-    if (
-        (Round.PlayerChoice == ROCK && Round.ComputerChoice == SCISSORS) ||
-        (Round.PlayerChoice == SCISSORS && Round.ComputerChoice == PAPER) ||
-        (Round.PlayerChoice == PAPER && Round.ComputerChoice == ROCK)
-        )
-        return PLAYER;
-
-    return COMPUTER;
 }
 
 void GetWinnerScreenColor(enWinner Winner)
@@ -139,6 +125,20 @@ void GetWinnerScreenColor(enWinner Winner)
 }
 
 // Round
+enWinner CheckRoundWinner(stRoundInfo Round)
+{
+    if (Round.PlayerChoice == Round.ComputerChoice)
+        return DRAW;
+
+    if (
+        (Round.PlayerChoice == ROCK && Round.ComputerChoice == SCISSORS) ||
+        (Round.PlayerChoice == SCISSORS && Round.ComputerChoice == PAPER) ||
+        (Round.PlayerChoice == PAPER && Round.ComputerChoice == ROCK)
+        )
+        return PLAYER;
+
+    return COMPUTER;
+}
 void PLayRound(stRoundInfo& Round)
 {
     Round.PlayerChoice = ReadPlayerChoice();
