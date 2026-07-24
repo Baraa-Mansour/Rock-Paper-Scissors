@@ -1,0 +1,54 @@
+# Visual Studio specific
+.vs/
+x64/
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build output directories
+Debug/
+Release/
+x86/
+*.exe
+*.dll
+*.obj
+*.lib
+*.exp
+*.ilk
+*.pdb
+*.idb
+*.pch
+
+# Visual Studio Code (if used)
+.vscode/
+
+# CMake (if using CMake)
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Compiled C++ files
+*.o
+*.out
+*.app
+
+# Backup files
+*~
+*.bak
+*.tmp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# User-specific project files
+*.user
+*.opendb
+*.vspscc
+*.vssscc
+*.dbmdl
+*.pidb
+*.log
