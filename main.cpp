@@ -109,6 +109,7 @@ enRockPaperScissors GenerateRandomChoice()
 
 void GetWinnerScreenColor(enWinner Winner)
 {
+    // Windows-specific console commands
     switch (Winner)
     {
     case PLAYER:
@@ -225,6 +226,7 @@ void PlayGame()
 
 void ResetScreen()
 {
+    // Windows-specific console commands
     system("cls");
     system("color 0F");
 }
